@@ -2,7 +2,7 @@
   "name": "voll-solutions-backend",
   "version": "1.0.0",
   "description": "back end do chat via socket, desafio voll solutions",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server.js"
   },
