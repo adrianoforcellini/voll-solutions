@@ -3,6 +3,7 @@ import { io } from 'socket.io-client';
 const ENDPOINT = "http://localhost:3001";
 const socket = io(ENDPOINT);
 const client = 'Adriano Forcellini'
+
 function App() {
   const [message, setMessage] = useState("")
   
