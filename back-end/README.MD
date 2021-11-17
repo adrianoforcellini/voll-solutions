@@ -1,3 +1,3 @@
 CREATE DATABASE Voll_soChatIo;
 USE Voll_soChatIo;
-CREATE TABLE messages ( client VARCHAR(20), message VARCHAR(250), time VARCHAR(10) );
+CREATE TABLE messages (id INT AUTO_INCREMENT, client VARCHAR(20), message VARCHAR(250), time VARCHAR(10), PRIMARY KEY (id));
