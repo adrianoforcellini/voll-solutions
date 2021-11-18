@@ -36,4 +36,4 @@
 ####  e instale também as dependencias e inicie o servidor :
 ####  cd voll-solutions/front-end/voll-solutions/ && npm i && npm start
 
-### Agora basta você e seus amigos acessarem http://10.0.0.118:3000/ , para utilizarem o chat á vontade ;D
+### Agora ba1sta acessar http://localhost:3000/ e poderá utilizar o chat á vontade!!! Enjoy it!!!! ;D
