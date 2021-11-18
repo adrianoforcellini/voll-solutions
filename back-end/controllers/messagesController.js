@@ -7,7 +7,7 @@ const saveMessage = (data) => {
   messagesModel.saveMessage(client, message, time);
 };
 
-const getLast30Messages = async (_req, res) => {
+const getLast30Messages = async () => {
   const last30Messages = await messagesModel.getLast30Messages();
   if (last30Messages){
    return last30Messages.reverse();

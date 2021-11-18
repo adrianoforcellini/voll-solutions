@@ -47,11 +47,11 @@ const Chat = () => {
         <div className="messageContainer">
           {lastMessages?.map((item) => renderMessages(item))}
         </div>
+      </div>
         <section className="inputAndButtonChat">
           <input className="messageInput" onChange={handleChange} />
           <button className="sendMessageButton" onClick={sendMessage}>Send</button>
         </section>
-      </div>
     </div>
   );
 }

@@ -9,12 +9,12 @@ app.use(cors());
 const io = require("socket.io")(http, {
   cors: {
     origin: "http://localhost:3000",
-    methods: ["POST", "GET"],
   },
 });
 
 require(`./sockets/chat`)(io);
 
-http.listen(3001, () => {
-  console.log("Pai tá on!!!");
+const PORT = 3001
+http.listen(PORT, () => {
+  console.log(`Listening in port ${PORT}`);
 });
