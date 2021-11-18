@@ -1,7 +1,3 @@
-CREATE DATABASE Voll_soChatIo;
-USE Voll_soChatIo;
-
-CREATE TABLE messages (id INT AUTO_INCREMENT, client VARCHAR(20), message VARCHAR(250), time VARCHAR(10), PRIMARY KEY (id));
 ### Chat em Tempo Real!!!
 <img src="gif.gif" alt="imagem_signup_for_free" width="1400"/>
 
