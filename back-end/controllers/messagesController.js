@@ -11,4 +11,5 @@ const getLast30Messages = async (_req, res) => {
   const last30Messages = await messagesModel.getLast30Messages();
   res.send(last30Messages);
 };
+
 module.exports = { saveMessage, getLast30Messages };
