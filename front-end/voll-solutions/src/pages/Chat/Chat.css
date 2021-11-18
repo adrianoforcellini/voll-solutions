@@ -1,0 +1,45 @@
+.messageContainer {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  align-self: center;
+  background-color: rgb(105, 104, 104);
+  color: white
+}
+
+.messageContainer :nth-child(odd) {
+  color: black;
+  background-color: white;
+}
+
+.message {
+  height: 3.1vh;
+}
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inputAndButtonChat {
+  display: flex;
+  width: 80vw;
+  margin-left: 10%;
+  margin-top: 1%;
+  justify-content: center;
+}
+
+.messageInput {
+  width: 70vw;
+  height: 3vh;
+}
+
+.sendMessageButton {
+  width: 10vw;
+}
+
+.chatePage {
+  background-image: url('../../../images/background.png');
+  height: 100vh;
+}
