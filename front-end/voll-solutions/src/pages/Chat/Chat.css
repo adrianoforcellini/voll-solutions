@@ -2,8 +2,7 @@
   margin-top: 0.7%;
   display: flex;
   flex-direction: column;
-  width: 80vw;
-  align-self: center;
+  width: 60vw;
   background-color: rgb(105, 104, 104);
   color: white
 }
@@ -17,9 +16,24 @@
   height: 3.1vh;
 }
 
+.clientsOn {
+  width: 20vw;
+  background-color: rgba(240, 248, 255, 0.267);
+}
+
+.clientsList {
+  max-height: 90vh;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 .chatContainer {
+  align-self: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
 }
 
