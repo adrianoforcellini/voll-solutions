@@ -10,9 +10,9 @@ const saveMessage = (data) => {
 const getLast30Messages = async (_req, res) => {
   const last30Messages = await messagesModel.getLast30Messages();
   if (last30Messages){
-   return res.send(last30Messages.reverse());
+   return last30Messages.reverse();
   }
-  return res.send([])
+  return []
 };
 
 module.exports = { saveMessage, getLast30Messages };

@@ -15,8 +15,6 @@ const io = require("socket.io")(http, {
 
 require(`./sockets/chat`)(io);
 
-app.get("/getMessages", messagesController.getLast30Messages);
-
 http.listen(3001, () => {
   console.log("Pai tá on!!!");
 });

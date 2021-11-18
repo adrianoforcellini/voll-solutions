@@ -4,23 +4,21 @@ import './Chat.css'
 
 const ENDPOINT = "http://localhost:3001";
 const socket = io(ENDPOINT);
-let client = localStorage.getItem('client')
 
 const Chat = () => {
   const [message, setMessage] = useState("")
+  const [client, setClient] = useState("")
   const [lastMessages, setLastMessages] = useState([])
 
-  const getMessages = async () => {
-    const fetchMessages = await fetch(`${ENDPOINT}/getMessages`);
-    const listMessages = await fetchMessages.json();
-    setLastMessages(listMessages);
-  }
-
   useEffect(() => {
-    getMessages();
+    setClient(localStorage.getItem('client'))
+    socket.emit('sendMeMessages')
+    socket.on('last30Messages', (listOfMessages) => {
+      setLastMessages(listOfMessages)
+    })
     socket.on('getMessages', () => {
       setTimeout(() => {
-        getMessages()
+        socket.emit('sendMeMessages')
       }, 180);
     })
   }, []);
@@ -45,15 +43,15 @@ const Chat = () => {
 
   return (
     <div className="chatePage">
-    <div className="chatContainer">
-      <div className="messageContainer">
-        {lastMessages?.map((item) => renderMessages(item))}
+      <div className="chatContainer">
+        <div className="messageContainer">
+          {lastMessages?.map((item) => renderMessages(item))}
+        </div>
+        <section className="inputAndButtonChat">
+          <input className="messageInput" onChange={handleChange} />
+          <button className="sendMessageButton" onClick={sendMessage}>Send</button>
+        </section>
       </div>
-      <section className="inputAndButtonChat">
-      <input className="messageInput" onChange={handleChange} />
-      <button className="sendMessageButton" onClick={sendMessage}>Send</button>
-      </section>
-    </div>
     </div>
   );
 }
