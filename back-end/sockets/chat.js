@@ -5,6 +5,8 @@ module.exports = (io) => {
     console.log(`Novo usuário conectado ${socket.id}`);
     socket.on("clientMessage", (data) => {
       messagesController.saveMessage(data);
+      socket.emit("getMessages");
+      socket.broadcast.emit("getMessages");
     });
   });
 };

@@ -6,10 +6,24 @@ const client = 'Adriano Forcellini'
 
 function App() {
   const [message, setMessage] = useState("")
+  const [lastMessages, setLastMessages] = useState([])
   
-  useEffect(() => {
-  }, [message]);
+  const getMessages = async () => {
+    const fetchMessages = await fetch(`${ENDPOINT}/getMessages`);
+    const listMessages = await fetchMessages.json();
+    setLastMessages(listMessages);
+  }
   
+  useEffect( () => {
+    getMessages();
+    socket.on('getMessages', () => {
+      setTimeout(() => {
+        console.log('oi')
+        getMessages()}, 200);
+    })
+  }, []);
+  
+
   const handleChange = (e) => {
     setMessage(e.target.value)
   }
@@ -18,8 +32,17 @@ function App() {
     socket.emit('clientMessage',{client, message} )
   }
 
+  const renderMessages = (item) => {
+    return  (
+      <div>
+      ({item.time}) {item.client} : {item.message} 
+     </div>
+    )
+  }
+
   return (
     <div>
+    {lastMessages?.map((item) => renderMessages(item))}
     <input className="messageInput" onChange={handleChange} />
     <button onClick={sendMessage}>Send</button>
     </div>

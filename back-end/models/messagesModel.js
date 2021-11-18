@@ -7,10 +7,11 @@ const saveMessage = async (client, message, time) => {
 };
 
 const getLast30Messages = async () => {
-  const last30 = await connection.execute(
+  const listOfMessagesAndColumnsDetails = await connection.execute(
     "SELECT * FROM messages ORDER By id DESC LIMIT 30;"
   );
-  console.log(last30, "lastt");
+  const last30Messages = listOfMessagesAndColumnsDetails[0];
+  return last30Messages;
 };
 
-module.exports = { saveMessage };
+module.exports = { saveMessage, getLast30Messages };
