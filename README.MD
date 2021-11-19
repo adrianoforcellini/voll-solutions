@@ -1,5 +1,5 @@
 ### Chat em Tempo Real!!!
-<img src="gif.gif" alt="imagem_signup_for_free" width="1400"/>
+<img src="app.gif" alt="imagem_signup_for_free" width="1400"/>
 
 
 ### ReactJS + MySQL + NodeJS + Socket.io
