@@ -1,8 +1,8 @@
 ### Chat em Tempo Real!!!
+### ReactJS + MySQL + NodeJS + Socket.io
+
 <img src="app.gif" alt="imagem_signup_for_free" width="1400"/>
 
-
-### ReactJS + MySQL + NodeJS + Socket.io
 
 ### Como funciona?
 
